@@ -1,0 +1,19 @@
+{
+  "name": "liri-node-app",
+  "version": "1.0.0",
+  "description": "tweets, spotify and movies searches",
+  "main": "keys.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MMagnani5/Week10-Liri-node-app.git"
+  },
+  "author": "Michael Magnani",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MMagnani5/Week10-Liri-node-app/issues"
+  },
+  "homepage": "https://github.com/MMagnani5/Week10-Liri-node-app#readme"
+}
