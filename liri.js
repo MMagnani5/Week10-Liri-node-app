@@ -22,8 +22,9 @@ var omdb = require("omdb");
 // 
 var command = process.argv[2];
 
-var params = process.argv.slice(3);
+//var params = process.argv.slice(3);
 
+var argument = process.argv.slice(3);
 
 
 // build a switch case
@@ -54,6 +55,7 @@ switch(command){
 //Twitter process
 
 function lookForMyTweets(){
+  console.log("lookForMyTweets");
   var client = new Twitter({
     consumer_key: keys.twitterKeys.consumer_key,
     consumer_secret: keys.twitterKeys.consumer_secret,
@@ -75,10 +77,12 @@ function lookForMyTweets(){
 
 }
 // Spotify Process
-function spotifyMusic(song){
+function spotifyMusic(){
   var songToPass;
-          if(argument === undefined){
-              songtopass = "whats my age again"; 
+
+  // change the agrument to length to store the array
+          if(argument.length === 0){
+              songToPass = "whats my age again"; 
               console.log("what’s my age again");
      } else {
               songToPass = argument;
@@ -86,9 +90,10 @@ function spotifyMusic(song){
     }
       console.log("what’s my age again");
   
-    
+  console.log(songToPass);  
          
-spotify.search({ type: 'track', query: songtopass}, function(error, data) {
+spotify.search({ type: 'track', query: songToPass}, function(error, data) {
+    console.log(data);
         var data = data.tracks.items[0];
         console.log("Artist: " + data.artists[0].name);
         console.log("Song: " + data.name);
@@ -98,9 +103,9 @@ spotify.search({ type: 'track', query: songtopass}, function(error, data) {
     });
 }
 
-function movie(movie){
+function movie(){
     var movieTitle;
-    if (argument=== undefined){
+    if (argument.length === 0){
 
         movieTitle = "Mr. Nobody";
 
